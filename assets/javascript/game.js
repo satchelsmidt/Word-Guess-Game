@@ -51,22 +51,30 @@ document.addEventListener('DOMContentLoaded', function(){
                     numbersLeft = numbersLeft - 1;
             };
         };
-
-        console.log('guessesBefore: ' + guessRemaining);
         console.log('wordBefore: ' + currentWord);
 
         if(numbersLeft === 0){
-            reset();
             numWins = numWins+1;
-            alert('YOU WON');
+            document.getElementById("currentWord").textContent = currentWord;
+            setTimeout(function() {
+                alert("You are an Animal Expert");
+                reset()
+                document.getElementById("currentWord").textContent = currentHidden;
+                document.getElementById("guessesRemaining").textContent = guessRemaining;
+                document.getElementById("lettersGuessed").textContent = guessedArray;
+            },10)
+            ;
         };
 
         if(guessRemaining === 0){
-            reset();
-            alert('YOU LOSED');
+            setTimeout(function() {
+                alert("You are a Complete and Utter Failure");
+                reset()
+                document.getElementById("currentWord").textContent = currentHidden;
+                document.getElementById("guessesRemaining").textContent = guessRemaining;
+                document.getElementById("lettersGuessed").textContent = guessedArray;
+            },10)
         };
-
-        console.log('guessesAfter: ' + guessRemaining);
         console.log('wordAfter: ' + currentWord);
 
         //Push variable changes to html text display
@@ -74,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function(){
         document.getElementById("currentWord").textContent = currentHidden;
         document.getElementById("guessesRemaining").textContent = guessRemaining;
         document.getElementById("lettersGuessed").textContent = guessedArray;
-        document.getElementById("currentWord").innerHTML = currentHidden;
-
     });
 });
 
@@ -84,4 +90,5 @@ function assignValue(){
     document.getElementById("currentWord").innerHTML = currentHidden;
     document.getElementById("wins").innerHTML = numWins;
     document.getElementById("guessesRemaining").innerHTML = guessRemaining;
+    
 }
