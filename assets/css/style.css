@@ -1,8 +1,12 @@
-p{
+p, h1{
     text-align: center;
 }
 
 img{
     text-align: center;
     height: 150px;
+}
+
+.card{
+    overflow:auto;
 }
