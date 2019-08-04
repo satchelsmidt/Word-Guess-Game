@@ -1,7 +1,6 @@
-
 //Define Variables
 //Word bank that function pulls from 
-var wordBank = ["pig", "cow", "chicken", "sheep", 'horse', "monkey", "bird", "hawk", "snake", "fish", "spider", "cat", "human", "penguin"];
+var wordBank = ["pig", "cow", "chicken", "sheep", 'horse', "rat", "duck", "goose", "snake", "fish", "spider", "cat", "dog", "mouse", "farmer", "goat"];
 //Current word that user must guess (random word from wordBank array)
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
 //Current word divided into letters
@@ -70,26 +69,34 @@ document.addEventListener('DOMContentLoaded', function () {
             guessRemaining = guessRemaining - 1;
             document.getElementById("textBox").textContent = "Try Again!"
         };
+
         //If guessed array is less than 12 letters (the max), push newly guessed letters into it
         if (guessedArray.length < 12) {
             guessedArray.push(userKey);
         };
-        
+
         //For each new letter guessed, convert the corresponding '_' for currentLetters into the letter guessed
+
         for (let i = 0; i < currentLength; i++) {
             if (userKey === currentLetters[i]) {
                 currentHidden[i] = userKey;
                 currentLetters[i] = 0;
                 numbersLeft = numbersLeft - 1;
                 document.getElementById("textBox").textContent = "Nice guess!"
-            };
+            }
         };
+
+        //TO DO -- when correct letter guessed, do not subtract guesses remaining
 
         console.log('wordBefore: ' + currentWord);
 
         //If there are no more letters left, the user wins
         if (numbersLeft === 0) {
             numWins = numWins + 1;
+
+            let chicken = document.getElementById("chicken")
+            chicken.play();
+
             document.getElementById("currentWord").textContent = currentWord;
             setTimeout(function () {
                 alert("You are an Animal Expert");
@@ -97,11 +104,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById("currentWord").textContent = currentHidden;
                 document.getElementById("guessesRemaining").textContent = guessRemaining;
                 document.getElementById("lettersGuessed").textContent = guessedArray;
-            }, 10)
-                ;
+            }, 10);
         }
         //Otherwise, if there are no guesses remaining, they lose
         else if (guessRemaining === 0) {
+            let failure = document.getElementById("moo")
+            failure.play();
             setTimeout(function () {
                 alert("You are a Complete and Utter Failure");
                 reset()

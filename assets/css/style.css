@@ -1,12 +1,31 @@
-p, h1{
-    text-align: center;
+html{
+    background: url("../images/farm_background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-img{
+p, h1{
     text-align: center;
-    height: 150px;
+    color: white;
 }
 
 .card{
-    overflow:auto;
+    padding: 0px;
+    margin: 0px;
+    background: green;
 }
+
+body{
+    width: 100%;
+    background: transparent;
+}
+
+.jumbotron-fluid{
+    background: maroon;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+} 

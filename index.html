@@ -13,24 +13,27 @@
   <!-- Local CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <!-- Load js function on html page start -->
 
-<body>
+<body onload="assignValue()">
 
-  <container>
+  <div class="container">
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Hangman Deluxe (Farm Animal Edition!)</h1>
-        <p class="lead">Do you have what it takes to guess every animal on the farm?</p>
-      </div>
+      <h1 class="display-4">Hangman Deluxe (Farm Animal Edition!)</h1>
+      <p class="lead">Welcome to the Farm! Do you have what it takes to guess every animal that lives here?</p>
     </div>
 
     <div class="row ">
-      <div class="card col-6 float left">
-        <img src="assets/images/Cow.jpg" alt="cow picture" style='height: 400px'>
+      <div class="col-1"></div>
+
+      <div class="card col-4 center-content">
+        <img src="assets/images/cow.jpg" alt="cow picture" style='height: 250px'>
       </div>
 
-      <div class="card col-6">
+      <div class="col-2"></div>
+
+      <div class="card col-4 align-right">
         <p id="textBox">Press any key to get started!</p>
 
         <p>Wins: <span id="wins"></span> </p>
@@ -41,9 +44,14 @@
 
         <p>Letters Guessed: <span id="lettersGuessed"></span></p>
       </div>
-    </div>
 
-  </container>
+      <div class="col-1"></div>
+
+    </div>
+  </div>
+
+  <audio id="chicken" src="assets/images/Rudy_rooster_crowing-Shelley-1948282641.mp3"></audio>
+  <audio id="moo" src="assets/images/Cow_Moo-Mike_Koenig-42670858.mp3"></audio>
 
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 
