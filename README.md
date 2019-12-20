@@ -10,7 +10,7 @@ App was built to bring together HTML, CSS, and JavaScript skills in a basic web 
 
 Upon app load, a random farm animal name is generated and the number of spaces in the name is shown to the user, with all letters hidden. The user is prompted to press any key on their keyboard to begin guessing letters.
 
-<img src="/assets/readme_1.PNG" width="300" height="300"/>
+<img src="/assets/images/readme_1.PNG" width="300" height="300"/>
 
 The textbox in-game provides feedback on user answers in real-time.
 
