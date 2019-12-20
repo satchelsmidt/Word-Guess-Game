@@ -28,3 +28,4 @@ If the user runs out of guesses, a prompt appears on screen shaming them, and th
 
 * Do not count down number of guesses when the letter guessed is correct
 * Styling updates
+* Add footer with copyright + contact info
